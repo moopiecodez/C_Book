@@ -1,0 +1,133 @@
+1d0
+< #include<stdio.h>
+hellobad.c: In function ‘main’:
+hellobad.c:3:5: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+    3 |     printf("hello, world\n");
+      |     ^~~~~~
+hellobad.c:1:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+  +++ |+#include <stdio.h>
+    1 | 
+hellobad.c:3:5: warning: incompatible implicit declaration of built-in function ‘printf’ [-Wbuiltin-declaration-mismatch]
+    3 |     printf("hello, world\n");
+      |     ^~~~~~
+hellobad.c:3:5: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+
+1c1
+< #include<stdio.h>
+---
+> #include <stdio.h>
+4c4,5
+<     printf("hello, world\n");
+---
+>     printf("hello, 
+>     world\n");
+hellobad.c: In function ‘main’:
+hellobad.c:4:12: warning: missing terminating " character
+    4 |     printf("hello,
+      |            ^
+hellobad.c:4:12: error: missing terminating " character
+    4 |     printf("hello,
+      |            ^~~~~~~ 
+hellobad.c:5:10: error: stray ‘\’ in program
+    5 |     world\n");
+      |          ^
+hellobad.c:5:5: error: ‘world’ undeclared (first use in this function)
+    5 |     world\n");
+      |     ^~~~~
+hellobad.c:5:5: note: each undeclared identifier is reported only once for each function it appears in
+hellobad.c:5:10: error: expected ‘)’ before ‘n’
+    5 |     world\n");
+      |          ^~
+      |          )
+hellobad.c:4:11: note: to match this ‘(’
+    4 |     printf("hello,
+      |           ^
+hellobad.c:5:12: warning: missing terminating " character
+    5 |     world\n");
+      |            ^
+hellobad.c:5:12: error: missing terminating " character
+    5 |     world\n");
+      |            ^~~
+hellobad.c:5:12: error: expected ‘;’ before ‘}’ token
+    5 |     world\n");
+      |            ^
+      |            ;
+    6 | }
+      | ~           
+
+4c4
+<     printf("hello, world\n");
+---
+>     printf("hello, world\n);
+hellobad.c: In function ‘main’:
+hellobad.c:4:12: warning: missing terminating " character
+    4 |     printf("hello, world\n);
+      |            ^
+hellobad.c:4:12: error: missing terminating " character
+    4 |     printf("hello, world\n);
+      |            ^~~~~~~~~~~~~~~~~
+hellobad.c:5:1: error: expected expression before ‘}’ token
+    5 | }
+      | ^
+hellobad.c:4:12: error: expected ‘;’ before ‘}’ token
+    4 |     printf("hello, world\n);
+      |            ^
+      |            ;
+    5 | }
+      | ~           
+
+4c4
+<     printf("hello, world\n");
+---
+>     printf("hello, world\n")
+hellobad.c: In function ‘main’:
+hellobad.c:4:29: error: expected ‘;’ before ‘}’ token
+    4 |     printf("hello, world\n")
+      |                             ^
+      |                             ;
+    5 | }
+      | ~                            
+
+3c3
+< int main() {
+---
+> int main {
+hellobad.c:3:10: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+    3 | int main {
+      |          ^
+
+3c3
+< int main() {
+---
+>  main() {
+hellobad.c:3:2: warning: return type defaults to ‘int’ [-Wimplicit-int]
+    3 |  main() {
+      |  ^~~~
+
+3c3
+< int main() {
+---
+> int main() 
+hellobad.c: In function ‘main’:
+hellobad.c:4:5: error: expected declaration specifiers before ‘printf’
+    4 |     printf("hello, world\n");
+      |     ^~~~~~
+hellobad.c:5:1: error: expected declaration specifiers before ‘}’ token
+    5 | }
+      | ^
+hellobad.c:6: error: expected ‘{’ at end of input
+
+3c3
+< int main() {
+---
+> int main() 
+5c5
+< }
+---
+> 
+hellobad.c: In function ‘main’:
+hellobad.c:4:5: error: expected declaration specifiers before ‘printf’
+    4 |     printf("hello, world\n");
+      |     ^~~~~~
+hellobad.c:6: error: expected ‘{’ at end of input
+
