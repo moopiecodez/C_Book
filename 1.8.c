@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-/* count tabs*/
+/* count new lines*/
 int main() {
     int c, n1;
 
     n1 = 0;
     while ((c = getchar()) != EOF) {
-        if (c == '\t')
+        if (c == '\n')
             ++n1;
         printf("%d\n", n1);
     }
