@@ -2,7 +2,7 @@
 
 /* print fahrenheit-celsius table for fahr 0-300 */
 int main() {
-    int fahr, celsius;
+    float fahr, celsius;
     int lower, upper, step;
 
     lower = 0;
@@ -11,8 +11,8 @@ int main() {
 
     fahr = lower;
     while (fahr <= upper) {
-        celsius = 5 * (fahr-32) / 9; //avoids truncating 5/9 decimals
-        printf("%3d\t%6d\n", fahr, celsius); //define width of digit field
+        celsius = (5.0/9.0) * (fahr-32.0); 
+        printf("%3.0f\t%6.1f\n", fahr, celsius); //define width of digit field
         fahr = fahr + step;
     }
 }
